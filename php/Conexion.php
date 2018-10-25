@@ -2,7 +2,7 @@
 	class Conexion {
 		protected $db;
 		public function __construct() {
-			$this->db = @new mysqli("127.0.0.1","","","rest_dis");
+			$this->db = @new mysqli("127.0.0.1","root","","rest_dis");
 			if($this->db->connect_errno) {
 				echo "falto-conectar-a-mysql-".$this->db->connect_errno;
 				return;
