@@ -1,0 +1,2 @@
+﻿<?php include ("../../php/Conexion_pedidos.php");	$conexion=new Conexion_pedidos();
+	$datos=$conexion->recuperar_pedidos();foreach($datos as $dato){ ?><label class="text-uppercase"><b>cobrado:</b></label><p class="text-uppercase"><?=$dato['cobrado']?></p><label class="text-uppercase"><b>nombre_mesa:</b></label><p class="text-uppercase"><?=$dato['nombre_mesa']?></p><label class="text-uppercase"><b>id_pedidos:</b></label><p class="text-uppercase"><?=$dato['id_pedidos']?></p><?php } ?>
