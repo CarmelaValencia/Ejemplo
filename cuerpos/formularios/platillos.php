@@ -14,15 +14,12 @@ if($_GET['param']!='undefined'){
 <form method="POST" onsubmit="return false;"  enctype="multipart/form-data" id="platillosForm">
 	<div class="row">
 		<div class="col-md-12 col-sm-12">
-                
-               
-<label class="text-uppercase">id_platillos</label>
-               
-<input  required type="text" class="form-control text-uppercase" name="id_platillos" <?=$id_platillos?>
+           
+<input  required type="text" hidden="" name="id_platillos" <?=$id_platillos?>
  maxlength="40">
                         
                
-<label class="text-uppercase">nombre_platillos</label>
+<label class="text-uppercase">nombre del platillo</label>
                
 <input  required type="text" class="form-control text-uppercase" name="nombre_platillos" <?=$nombre_platillos?>
  maxlength="40">
