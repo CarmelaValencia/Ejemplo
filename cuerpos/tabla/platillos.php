@@ -3,14 +3,14 @@
         }
         ?><table class="table text-uppercase table-responsive table-bordered pre-scrollable">
 	<thead>
-        <th>tipo</th><th>descuento</th><th>foto</th><th>precio</th><th>nombre_platillos</th><th>id_platillos</th>
+        <th>foto</th><th>nombre_platillos</th><th>precio</th><th>tipo</th><th>descuento</th><th></th><th></th>
 	</thead>
 	<tbody id="tabla-usuarios" class="text-center">
 		<?php 
 		$datos=new Conexion_platillos();
 		$datos=$datos->buscar_platillos();
 		foreach($datos as $dato){ ?>
-		<tr><th ><?=$dato['tipo']?></th><th ><?=$dato['descuento']?></th><th ><?=$dato['foto']?></th><th ><?=$dato['precio']?></th><th ><?=$dato['nombre_platillos']?></th><th ><?=$dato['id_platillos']?></th>
+		<tr><th ><?=$dato['foto']?></th><th ><?=$dato['nombre_platillos']?></th><th ><?=$dato['precio']?></th><th ><?=$dato['tipo']?></th><th ><?=$dato['descuento']?></th>
 			<th >
 				<center>
 					<li 

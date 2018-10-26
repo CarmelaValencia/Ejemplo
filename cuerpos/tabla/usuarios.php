@@ -3,14 +3,14 @@
         }
         ?><table class="table text-uppercase table-responsive table-bordered pre-scrollable">
 	<thead>
-        <th>foto</th><th>tipo</th><th>nombre_real</th><th>contrasenia</th><th>nombre_usuarios</th><th>id_usuarios</th>
+        <th>foto</th><th>tipo</th><th>nombre completo</th><th>nombre de usuario</th>
 	</thead>
 	<tbody id="tabla-usuarios" class="text-center">
 		<?php 
 		$datos=new Conexion_usuarios();
 		$datos=$datos->buscar_usuarios();
 		foreach($datos as $dato){ ?>
-		<tr><th ><?=$dato['foto']?></th><th ><?=$dato['tipo']?></th><th ><?=$dato['nombre_real']?></th><th ><?=$dato['contrasenia']?></th><th ><?=$dato['nombre_usuarios']?></th><th ><?=$dato['id_usuarios']?></th>
+		<tr><th ><?=$dato['foto']?></th><th ><?=$dato['tipo']?></th><th ><?=$dato['nombre_real']?></th><th ><?=$dato['nombre_usuarios']?></th>
 			<th >
 				<center>
 					<li 

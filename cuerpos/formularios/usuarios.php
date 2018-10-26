@@ -7,7 +7,7 @@ if($_GET['param']!='undefined'){
 	$conexion=new Conexion_usuarios();
 	$datos=$conexion->recuperar_usuarios();
 	foreach($datos as $dato){
-		$foto="value='".$dato['foto']."'";$tipo="value='".$dato['tipo']."'";$nombre_real="value='".$dato['nombre_real']."'";$contrasenia="value='".$dato['contrasenia']."'";$nombre_usuarios="value='".$dato['nombre_usuarios']."'";$id_usuarios="value='".$dato['id_usuarios']."'";
+		$foto="value='".$dato['foto']."'";$tipo=$dato['tipo'];$nombre_real="value='".$dato['nombre_real']."'";$contrasenia="value='".$dato['contrasenia']."'";$nombre_usuarios="value='".$dato['nombre_usuarios']."'";$id_usuarios="value='".$dato['id_usuarios']."'";
 	}
 }
 ?>
@@ -16,46 +16,54 @@ if($_GET['param']!='undefined'){
 		<div class="col-md-12 col-sm-12">
                 
                
-<label class="text-uppercase">id_usuarios</label>
                
-<input  required type="text" class="form-control text-uppercase" name="id_usuarios" <?=$id_usuarios?>
- maxlength="40">
+<input  required type="text" hidden="" name="id_usuarios" <?=$id_usuarios?> maxlength="40">
                         
+
+<label class="text-uppercase">nombre completo</label>
                
-<label class="text-uppercase">nombre_usuarios</label>
+<input  required type="text" class="form-control text-uppercase" name="nombre_real" <?=$nombre_real?>
+ maxlength="40">
+
+<label class="text-uppercase">nombre de usuario</label>
                
 <input  required type="text" class="form-control text-uppercase" name="nombre_usuarios" <?=$nombre_usuarios?>
  maxlength="40">
                         
-               
+<?php if($_GET['param']=='undefined'){ ?>
+
 <label class="text-uppercase">contrasenia</label>
                
 <input  required type="text" class="form-control text-uppercase" name="contrasenia" <?=$contrasenia?>
  maxlength="40">
-                        
-               
-<label class="text-uppercase">nombre_real</label>
-               
-<input  required type="text" class="form-control text-uppercase" name="nombre_real" <?=$nombre_real?>
- maxlength="40">
-                        
-               
+<?php } ?>               
+                                
 <label class="text-uppercase">tipo</label>
-               
-<input  required type="text" class="form-control text-uppercase" name="tipo" <?=$tipo?>
- maxlength="40">
+<select required type="text" class="form-control text-uppercase" name="tipo">
+    <?php 
+    echo "<option value=3 ";
+    if ($tipo == "3") {
+        echo 'selected ';
+    }
+    echo ">MESERO</option>";
+    echo "<option value=2 "; 
+    if ($tipo == "2") {
+        echo 'selected ';
+    }
+    echo ">ADMINISTRADOR</option>";
+    ?>
+</select>
                         
                
 <label class="text-uppercase">foto</label>
                
-<input  required type="text" class="form-control text-uppercase" name="foto" <?=$foto?>
+<input type="file" type="text" class="form-control text-uppercase" name="foto" <?=$foto?>
  maxlength="40">
                         
 		</div>
 	<div class="col-md-12">
 		<br>
 		<center>
-
 			<button class="btn btn-primary" 
 				<?php if($_GET['param']=='undefined'){echo "onclick='crear_usuarios(1)'";} else {echo "onclick='modificar_usuarios(".$_GET['param'].")'";}?>
 			type="submit">ACEPTAR</button>

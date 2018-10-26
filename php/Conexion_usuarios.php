@@ -10,7 +10,7 @@ class Conexion_usuarios extends Conexion {
             if(isset($_GET['usuarios'])){
                 $usuarios=$_GET['usuarios'];
             }
-        return $this->db->query("select * from usuarios where nombre_usuarios like  '%$usuarios%'");
+        return $this->db->query("select * from usuarios where nombre_usuarios like  '%$usuarios%' and tipo!=1");
     }
     
     public function recuperar_usuarios(){
@@ -33,6 +33,7 @@ class Conexion_usuarios extends Conexion {
             foreach ($consulta as $key) {
             @session_start();
             $_SESSION['NOMBRE-KEY']=$key['nombre_usuarios'];
+            $_SESSION['TIPO']=$key['tipo'];
                 return "1";
            }
     }
