@@ -34,7 +34,7 @@ if($_GET['param']!='undefined'){
 
 <label class="text-uppercase">contrasenia</label>
                
-<input  required type="text" class="form-control text-uppercase" name="contrasenia" <?=$contrasenia?>
+<input  required type="password" class="form-control text-uppercase" name="contrasenia" <?=$contrasenia?>
  maxlength="40">
 <?php } ?>               
                                 

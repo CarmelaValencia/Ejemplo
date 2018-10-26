@@ -15,8 +15,8 @@
                                 </div>
                             </div>
                             <div class="col-md-1 col-sm-1">
-                                <button type="button" data-dismiss="modal" class="btn btn-default">
-                                    <li class="zmdi zmdi-close-circle"></li>
+                                <button style="border-radius: 100px" type="button" data-dismiss="modal" class="btn btn-danger">
+                                    <li class="fa fa-remove">X</li>
                                 </button>
                             </div>
                         </div>
